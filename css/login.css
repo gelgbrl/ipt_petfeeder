@@ -20,7 +20,7 @@ body {
 .container {
     margin: 10px auto;
     display: flex;
-    background-color: #fff;
+    background-color: #ffffffee;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.479);
