@@ -48,3 +48,21 @@ body {
     border-radius: 5px;
 }
 
+.login-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #8adc64;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn {
+    margin: 0 200px;
+}
+
+.login-form button:hover {
+    background-color: #72be4e;
+}
