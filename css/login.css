@@ -66,3 +66,14 @@ body {
 .login-form button:hover {
     background-color: #72be4e;
 }
+
+.login-form p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.login-form a {
+    color: #72be4e;
+    text-decoration: none;
+}
