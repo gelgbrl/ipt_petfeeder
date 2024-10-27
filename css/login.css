@@ -7,7 +7,9 @@
 
 body {
     min-height: 100vh;
-    background-color: #f0f0f0;
+    background-image: url(https://i.imgur.com/WbsrmRu.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .container {
