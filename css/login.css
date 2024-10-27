@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: 10px;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
     overflow-y: hidden;
@@ -9,6 +9,7 @@
 body {
     min-height: 100vh;
     background-image: url(https://i.imgur.com/WbsrmRu.png);
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -49,12 +50,12 @@ body {
 }
 
 .login-form button {
-    padding: 10px;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     background-color: #8adc64;
     color: white;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -71,9 +72,28 @@ body {
     margin-top: 20px;
     font-size: 14px;
     color: #555;
+    text-align: center;
+}
+
+.login-form span {
+    display: none;
 }
 
 .login-form a {
     color: #72be4e;
     text-decoration: none;
+}
+
+@media (max-width: 700px) {
+    .login-form button {
+        min-width: 100%;
+    }    
+
+    .btn {
+        display: flex;
+        margin: 0;
+    }
+    .login-form span {
+        display: inline;
+    }
 }
