@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    overflow-y: hidden;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url(https://i.imgur.com/WbsrmRu.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.container {
+    margin: 10px auto;
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.479);
+}
+
+.login-form {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.login-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #8adc64;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn {
+    margin: 0 200px;
+}
+
+.login-form button:hover {
+    background-color: #72be4e;
+}
+
+.login-form p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+}
+
+.login-form span {
+    display: none;
+}
+
+.login-form a {
+    color: #72be4e;
+    text-decoration: none;
+}
+
+@media (max-width: 700px) {
+    .login-form button {
+        min-width: 100%;
+    }    
+
+    .btn {
+        display: flex;
+        margin: 0;
+    }
+    .login-form span {
+        display: inline;
+    }
+}
