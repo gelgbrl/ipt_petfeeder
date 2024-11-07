@@ -11,6 +11,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
+    overflow: hidden;
 }
   
 .navbar {
@@ -83,6 +84,13 @@ body {
 .logs {
     width: 75%;
     margin-left: 30px;
+}
+
+.log-list {
+    overflow: auto;
+    max-height: 80vh;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
   
 .logs h2 {
@@ -193,7 +201,12 @@ body {
         margin: 0px;
         margin-bottom: 11vh;
     }
-      
+    
+    .log-list {
+        overflow: auto;
+        max-height: 38vh;
+    }
+    
     .logs h2 {
         text-align: center;
         margin-top: 15px;
