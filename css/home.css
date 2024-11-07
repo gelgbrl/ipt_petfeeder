@@ -206,10 +206,6 @@ body {
         overflow: auto;
         max-height: 38vh;
     }
-    
-    .logs::before {
-        top: 5vh;
-    }
 
     .logs h2 {
         text-align: center;
