@@ -32,6 +32,7 @@ body {
     color: white;
     text-decoration: none;
     margin-left: 20px;
+    font-size: 20px;
 }
   
 .container {
@@ -106,4 +107,33 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.add {
+    position: fixed;
+    bottom: 10vh;
+    left: 90vw;
+}
+
+.add p {
+    margin-top: 6px;
+    font-size: 75px;
+}
+
+.add a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border-radius: 50%;
+    height: 85px;
+    width: 85px;
+    text-align: center;
+    background-color: #04abd4;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: 0.5s;
+}
+
+.add a:hover {
+    background-color: #007a99;
+    transition: 0.5s;
 }
