@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-padding-top: 15px;
 }
   
 body {
@@ -14,7 +13,7 @@ body {
     height: 100vh;
     overflow: hidden;
 }
-  
+/* NAVIGATION */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -34,10 +33,11 @@ body {
 .navbar nav a {
     color: white;
     text-decoration: none;
-    margin-left: 20px;
-    font-size: 20px;
+    margin-left: 40px;
+    font-size: 25px;
 }
-  
+
+/* PROFILE */
 .container {
     display: flex;
     margin: 20px;
@@ -82,7 +82,8 @@ body {
     height: 50px;
     margin-right: 10px;
 }
-  
+
+/* LOGS */
 .logs {
     width: 75%;
     margin-left: 30px;
@@ -96,12 +97,14 @@ body {
     max-height: 80vh;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    padding: 10px;
 }
 
 .logs h2 {
     font-size: 1.5em;
     color: #6b5b53;
     margin-bottom: 15px;
+    padding-left: 10px;
 }
 
 .log-item {
@@ -109,7 +112,7 @@ body {
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.14);
 }
 
 .log-item .close-btn {
@@ -128,6 +131,7 @@ body {
     justify-content: space-between;
 }
 
+/* ADD BUTTON */
 .add {
     position: fixed;
     bottom: 11vh;
@@ -156,6 +160,7 @@ body {
     transition: 0.5s;
 }
 
+/* POPUP FORM */
 .popup {
     position: fixed;
     top: -150%;
@@ -238,6 +243,7 @@ body {
     transition: 0.5s;
 }
 
+/* RESPONSIVE MEDIA */
 @media (max-width: 1200px) {
     .profile-pic {
         height: 125px;
@@ -247,14 +253,7 @@ body {
 }
 
 @media (max-width: 800px) {
-    .container {
-        margin-top: 2vh;
-        margin-bottom: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
+    /* NAV */
     .navbar {
         position: fixed;
         width: 100vw;
@@ -266,18 +265,13 @@ body {
         color: white;
     }
 
-    .profile {
-        width: 100%;
-        height: auto;
-    }
-      
     .navbar .logo {
         position: fixed;
         display: none;
     }
 
     .navbar nav a {
-        font-size: 25px;
+        margin: 0 5vw;
     }
 
     nav {
@@ -288,6 +282,21 @@ body {
         gap: 15vw;
     }
 
+    /* PROFILE */
+    .container {
+        margin-top: 2vh;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile {
+        width: 100%;
+        height: auto;
+    }
+
+    /* LOGS */
     .logs {
         width: 95%;
         margin: 0px;
@@ -304,6 +313,7 @@ body {
         margin-top: 15px;
     }
 
+    /* BUTTON */
     .add {
         bottom: 12vh;
         left: 78vw;
@@ -314,6 +324,8 @@ body {
         height: 75px;
         width: 75px;
     }
+
+    /* FORM */
     .form-element input[type="time"] {
         width: 70%;
     }
