@@ -13,7 +13,7 @@
             <form action="/login" method="post">
                 <input type="text" placeholder="Username or Email" required>
                 <input type="password" placeholder="Password" required>
-                <div class="btn"><button type="submit">Log In</button></div>
+                <div class="btn"><button type="submit" name="log_btn">Log In</button></div>
             </form>
             <p>Don't have an account? <span></span> <a href="/register">Register here</a></p>
         </div>
