@@ -5,6 +5,7 @@ $con = new config();
 $con->con();
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,17 +16,19 @@ $con->con();
   <script src="https://kit.fontawesome.com/d781878796.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <!-- NAVIGATION -->
   <header class="navbar">
-    <div class="logo">LOGO</div>
+    <div class="logo"><img src="img/logo.png" alt=""></div>
     <nav>
-      <a href="#home" title="Home" class="_home"><i class="fa-solid fa-house"></i></a>
-      <a href="#" title="Schedules" class="_sched"><i class="fa-solid fa-calendar-days"></i></a>
-      <a href="#" title="User" class="_user"><i class="fa-solid fa-user"></i></a>
-      <a href="./pages/login.php" title="Sign Out" class="_out"><i class="fa-solid fa-right-from-bracket"></i></a>
+      <a href="#" title="Home" class="_home"><i class="fa-solid fa-bell"></i></a>
+      <a href="pages/schedule.php" title="Schedules" class="_sched"><i class="fa-regular fa-calendar"></i></a>
+      <a href="#" title="History" class="_out"><i class="fa-regular fa-clock"></i></a>
     </nav>
   </header>
 
+  <!-- HOME -->
   <div class="container" id="home">
+    <!-- PROFILE -->
     <aside class="profile">
       <img src="https://i.imgur.com/dsV7lvm.png" alt="Pet Profile Picture" referrerpolicy="no-referrer" class="profile-pic">
       <div class="username">@username</div>
@@ -44,70 +47,61 @@ $con->con();
         </div>
       </div>
     </aside>
-  
+    
+    <!-- LOGS -->
     <main class="logs" id="logs">
       <h2>Feed Log</h2>
       <div class="log-list">
+        
+        <!-- ITEM -->
         <div class="log-item">
           <div class="log-top">
             <p class="log-date">November 01, 2024 • 9:50 PM</p>
-            <p>✖</p>
+            <div class="close-btn">✖</div>
           </div>
           <hr>
           <p>Your pet has eaten food from the bowl.</p>
           <p>Bowl Status: 2.3kg</p>
         </div>
+
+        <!-- ITEM -->
         <div class="log-item">
           <div class="log-top">
-            <p class="log-date">November 01, 2024 • 9:50 PM</p>
-            <p>✖</p>
+            <p class="log-date">November 11, 2024 • 8:50 PM</p>
+            <div class="close-btn">✖</div>
           </div>
           <hr>
           <p>Your pet has eaten food from the bowl.</p>
-          <p>Bowl Status: 3.1kg</p>
+          <p>Bowl Status: 4.3kg</p>
         </div>
-        <div class="log-item">
-          <div class="log-top">
-            <p class="log-date">November 01, 2024 • 9:50 PM</p>
-            <p>✖</p>
-          </div>
-          <hr>
-          <p>Device Activated. Food bowl has been filled with food.</p>
-          <p>Bowl Status: 4.0kg</p>
-        </div>
-        <div class="log-item">
-          <div class="log-top">
-            <p class="log-date">November 01, 2024 • 9:50 PM</p>
-            <p>✖</p>
-          </div>
-          <hr>
-          <p>Device Activated. Food bowl has been filled with food.</p>
-          <p>Bowl Status: 4.0kg</p>
-        </div>
-        <div class="log-item">
-          <div class="log-top">
-            <p class="log-date">November 01, 2024 • 9:50 PM</p>
-            <p>✖</p>
-          </div>
-          <hr>
-          <p>Device Activated. Food bowl has been filled with food.</p>
-          <p>Bowl Status: 4.0kg</p>
-        </div>
-        <div class="log-item">
-          <div class="log-top">
-            <p class="log-date">November 01, 2024 • 9:50 PM</p>
-            <p>✖</p>
-          </div>
-          <hr>
-          <p>Device Activated. Food bowl has been filled with food.</p>
-          <p>Bowl Status: 4.0kg</p>
-        </div>
+
       </div>
     </main>
   </div>
+
+  <!-- ADD BUTTON -->
   <div class="add">
-    <p><a href="./pages/schedule.php" target="__blank">+</a></p>
-     <!-- <input class="btn" type="submit" value="+"> -->
+    <button id="show-popup">+</button>
   </div>
+
+  <!-- POPUP -->
+  <div class="popup">
+    <div class="close-btn">✖</div>
+    <div class="form">
+      <?php addSchedMsg(); ?>
+      <h2>Add Schedule</h2>
+      <form method="POST">
+        <div class="form-element">
+          <label for="time">Set Time:</label>
+          <input type="time" id="time" name="add_time" step="60" value="00:00">
+        </div>
+        <div class="form-element">
+          <input type="submit" value="ADD" name="submit">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/home.js"></script>
 </body>
 </html>
