@@ -13,7 +13,7 @@ body {
     height: 100vh;
     overflow: hidden;
 }
-  
+/* NAVIGATION */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -24,18 +24,20 @@ body {
     height: 10vh;
 }
   
-.navbar .logo {
-    font-size: 1.5em;
-    font-weight: bold;
+.navbar .logo  img {
+    margin-top: 1vh;
+    height: 10vh;
+    width: auto;
 }
   
 .navbar nav a {
     color: white;
     text-decoration: none;
-    margin-left: 20px;
-    font-size: 20px;
+    margin-left: 40px;
+    font-size: 25px;
 }
-  
+
+/* PROFILE */
 .container {
     display: flex;
     margin: 20px;
@@ -80,23 +82,29 @@ body {
     height: 50px;
     margin-right: 10px;
 }
-  
+
+/* LOGS */
 .logs {
     width: 75%;
     margin-left: 30px;
 }
 
 .log-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     overflow: auto;
     max-height: 80vh;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    padding: 10px;
 }
 
 .logs h2 {
     font-size: 1.5em;
     color: #6b5b53;
     margin-bottom: 15px;
+    padding-left: 10px;
 }
 
 .log-item {
@@ -104,7 +112,13 @@ body {
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3)
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.14);
+}
+
+.log-item .close-btn {
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
 }
 
 .log-item p {
@@ -117,35 +131,119 @@ body {
     justify-content: space-between;
 }
 
+/* ADD BUTTON */
 .add {
     position: fixed;
     bottom: 11vh;
     left: 11vw;
 }
 
-.add p {
-    margin-top: 6px;
-    font-size: 75px;
-}
-
-.add a {
+.add button {
     display: inline-block;
     text-decoration: none;
     color: white;
+    border: none;
+    outline: none;
     border-radius: 50%;
+    font-size: 75px;
     height: 85px;
     width: 85px;
+    cursor: pointer;
     text-align: center;
     background-color: #04abd4;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     transition: 0.5s;
 }
 
-.add a:hover {
+.add button:hover {
     background-color: #007a99;
     transition: 0.5s;
 }
 
+/* POPUP FORM */
+.popup {
+    position: fixed;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%,-50%) scale(1.25);
+    width: 380px;
+    padding: 20px 30px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.14);
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 250ms ease-in-out 0ms;
+}
+
+.popup.active{
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: top 0ms ease-in-out 0ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 250ms ease-in-out 0ms;
+}
+
+.popup .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 13px;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
+.form h2 {
+    text-align: center;
+    color: #4d4dff;
+    margin: 10px 0 20px;
+    font-size: 2em;
+}
+
+.form-element {
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-element label {
+    font-size: 1.5em;
+    color: #7272fd;
+}
+
+.form-element input[type="time"] {
+    margin-top: 5px;
+    display: block;
+    width: 50%;
+    font-size: 20px;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #7272fd;
+    border-radius: 5px;
+}
+
+.form-element input[type="submit"] {
+    width: 45%;
+    height: 2em;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    background: #04abd4;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.form-element input[type="submit"]:hover {
+    background: #007a99;
+    transition: 0.5s;
+}
+
+/* RESPONSIVE MEDIA */
 @media (max-width: 1200px) {
     .profile-pic {
         height: 125px;
@@ -155,14 +253,7 @@ body {
 }
 
 @media (max-width: 800px) {
-    .container {
-        margin-top: 2vh;
-        margin-bottom: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
+    /* NAV */
     .navbar {
         position: fixed;
         width: 100vw;
@@ -174,18 +265,13 @@ body {
         color: white;
     }
 
-    .profile {
-        width: 100%;
-        height: auto;
-    }
-      
     .navbar .logo {
         position: fixed;
         display: none;
     }
 
     .navbar nav a {
-        font-size: 25px;
+        margin: 0 5vw;
     }
 
     nav {
@@ -196,6 +282,21 @@ body {
         gap: 15vw;
     }
 
+    /* PROFILE */
+    .container {
+        margin-top: 2vh;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile {
+        width: 100%;
+        height: auto;
+    }
+
+    /* LOGS */
     .logs {
         width: 95%;
         margin: 0px;
@@ -212,19 +313,27 @@ body {
         margin-top: 15px;
     }
 
+    /* BUTTON */
     .add {
         bottom: 12vh;
         left: 78vw;
     }
 
-    .add p {
-        margin-top: 6px;
+    .add button {
         font-size: 65px;
-    }
-
-    .add a {
         height: 75px;
         width: 75px;
+    }
+
+    /* FORM */
+    .form-element input[type="time"] {
+        width: 70%;
+    }
+}
+
+@media (max-width: 600px) {
+    .popup {
+        width: 300px;
     }
 }
 
